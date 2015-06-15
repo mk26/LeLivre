@@ -121,7 +121,7 @@ search($isbn, $query);
                 <div class="col-md-12">
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
-                            <img src="book_covers/<? echo $book['title']?>.jpg" alt="Book Cover" height="320" width="320">
+                            <img src="images/book_covers/<? echo $book['title']?>.jpg" alt="Book Cover" height="320" width="320">
                             <div class="caption">
                                 <h3 class="text-info"><? echo $book['title'];  getAvgBook($book['title']);?></h3>
                                 <a href="author.php?author=<? echo $book['a_id']?>"><h4 class="text-info"><? getAuthors($isbn);?></h4></a>
@@ -157,7 +157,7 @@ search($isbn, $query);
 								displayReview($query); 
 								echo "<br><strong>REVIEWS FOR OTHER EDITIONS OF ".$title."</strong>";
 								$query = pg_query("SELECT username, rating, review FROM review_book, book WHERE review_book.isbn = book.isbn and book.title = '$title' EXCEPT SELECT username, rating, review FROM REVIEW_BOOK WHERE isbn='$isbn'");
-								displayReview($query);
+								displayOtherReview($query);
 								?>
 							</div>
                         </div>

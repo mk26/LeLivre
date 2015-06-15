@@ -168,7 +168,7 @@ require_once('fmanage.php');
                         </div>
                         <div class="modal-body">
                             <h4> Enter passwords</h4><br>
-                            <form class="form-horizontal col-lg-6" role="form" action="fmanage.php" method="post">
+                            <form class="form-horizontal" role="form" action="fmanage.php" method="post">
                                 <div class="form-group">
                                     <label for="username" class="col-sm-2 control-label">Current Password</label>
                                     <div class="col-sm-10">
@@ -180,9 +180,8 @@ require_once('fmanage.php');
                                     <div class="col-sm-10">
                                         <input type="password" class="form-control" id="newpass" name="newpass" placeholder="Enter a new password">
                                     </div>
-                                </div>
+                                </div><br><br>
                                 <div class="form-group">
-
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <? if($_GET['change']=='failed')
 {echo "<div class=\"alert alert-danger\">Invalid password. Please try again.</div>";
@@ -190,9 +189,7 @@ require_once('fmanage.php');
 
 if($_GET[change]=='success')
 echo "<div class=\"alert alert-success\">Password Changed successfully</div>";
-?>
-                                        
-                                    </div>
+?>                                    </div>
                                 </div>
                             
                         </div>

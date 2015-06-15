@@ -84,7 +84,7 @@ else{
     	$isbn = $row['isbn'];
         echo "<div class=\"col-md-4\">
 <div class=\"thumbnail\">
-    <img src=\"book_covers/".$row['title'].".jpg\" alt=\"Book Cover\" height=\"120\" width=\"120\" class=\"col-md-4 img-responsive\">
+    <img src=\"images/book_covers/".$row['title'].".jpg\" alt=\"Book Cover\" height=\"120\" width=\"120\" class=\"col-md-4 img-responsive\">
     <div class=\"caption\">
         <a href=\"book.php?book=".$isbn."\"><h4 class=\"text-info\">".$row['title']."</h4></a>"; 
         echo "<h5 class=\"text-info\">"; getAuthors($isbn);        
@@ -133,7 +133,7 @@ function getGenres($isbn)
 if(isset($_GET['query']))
 {
 $keyword = $_GET['query'];
-$query = pg_query("SELECT * FROM BOOK B WHERE B.title ILIKE '%$keyword%'");
+$query = pg_query("SELECT * FROM BOOK B WHERE B.title ILIKE '%$keyword%' OR B.isbn ILIKE '%$keyword%'");
 search($keyword,$query);
 }
 

@@ -43,7 +43,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
             <div class="col-lg-12">
 				<form action="search_results.php" action="get">
                 <div class="input-group">
-                    <input type="search" class="form-control" placeholder="Search for books" name="query">
+                    <input type="search" class="form-control" placeholder="Search for books by name or ISBN" name="query">
                     <span class="input-group-btn">
 		<button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span>
                     </button>
@@ -107,9 +107,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
         <!-- Sign up info -->
 		<br>
         <div class="jumbotron">
-            <h2>Go b(u)y the book, sign up now for an experience like never before</h2>
-            <p>Just pick a book, we'll have it ready for you to read. Choose from our huge catalog and get the book that you want in all available formats, at the best prices.</p>
-            <p>Don't have an account yet?, Think no more. Signing up takes just under a minute and is completely free.</p>
+			<h3>Don't have an account yet?, Think no more. Signing up takes just under a minute and is completely free.</h3><br>
+			
             <p><a class="btn btn-lg btn-primary" href="signup.php" role="button">Sign up now</a>
             </p>
         </div>

@@ -92,7 +92,7 @@ require_once('fcart.php');
 				
 	</table>
 
-	<a href="revieworder.php"><button type="button" class="btn input-lg btn-success" <? if     ($_SESSION['cartqty']==0) echo "disabled";?>>Continue to checkout &nbsp;<span class="glyphicon glyphicon-chevron-right"></button></a>
+	<a href="revieworder.php"><button type="button" class="btn input-lg btn-primary" <? if     ($_SESSION['cartqty']==0) echo "disabled";?>>Proceed to Checkout &nbsp;<span class="glyphicon glyphicon-chevron-right"></button></a>
 	
 	</div>
 	</div>

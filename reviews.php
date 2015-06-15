@@ -28,6 +28,27 @@ foreach($reviews as $review)
 }
 }
 
+function displayOtherReview($query)
+{
+global $reviews, $user;
+$reviews = pg_fetch_all($query);
+echo "<hr>";
+if($reviews==NULL) echo "No reviews found <br><hr>";
+else{
+foreach($reviews as $review)
+{
+	for($x=1; $x<=$review['rating']; $x++)
+	echo "<i class='glyphicon glyphicon-star'></i>";
+	for($x=5; $x>$review['rating']; $x--)
+	echo "<i class='glyphicon glyphicon-star-empty'></i>";
+	echo "<br>";
+	echo "<h5>".$review['review']."</h5>";
+	echo "<h6 class=\"text text-info\">".$review['username']."</h6>";
+	echo "<hr>";
+}
+}
+}
+
 function getUserRating($isbn)
 {
 	global $user;
